@@ -3,6 +3,7 @@ const express = require('express');
 const cnpjValidation = require('./validateCnpj');
 
 const User = require('../models/user');
+const { redirect } = require('express/lib/response');
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ router.post('/register', async (req, res) => {
 
     try {
 
-        if (!await cnpjValidation(req.body.cnpj)) {
+        if (!cnpjValidation(req.body.cnpj)) {
             return res.status(400).send({ error: 'CNPJ invalid' });
         }
             
@@ -23,7 +24,7 @@ router.post('/register', async (req, res) => {
            
         const user = await User.create(req.body);
 
-        return res.redirect("/app");
+        return res.send({ message: 'Registered account' });
 
     } catch (err) {
 
