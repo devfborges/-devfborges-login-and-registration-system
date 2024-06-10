@@ -1,170 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
 }
 
 #link-respons {
-    display: none;
+  display: none;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .screen {
-    display: flex;
-    width: 50%;
-    height: 100vh;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .sign-up {
-    background-color: #5A5EA6;
+  background-color: #5a5ea6;
 }
 
 .sign-in {
-    background-color: #4981AA;
+  background-color: #4981aa;
 }
 
 .forms {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .forms h3 {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 24px;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 24px;
 }
 
-.forms input{
-    margin-bottom: 16px;
-    padding: 16px;
-    border: none;
-    border-bottom: 1px solid white;
-    color: white;
-    font-size: 1.2rem;
+.forms input {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 1.2rem;
 }
 
-.forms input[type=submit] {
-    border: 2px solid white;
-    margin-top: 24px;
-    width: 40%;
+.forms input[type="submit"] {
+  border: 2px solid white;
+  margin-top: 24px;
+  width: 40%;
 }
 
 .forms input::placeholder {
-    color: white;
-    font-size: 1.2rem; 
+  color: white;
+  font-size: 1.2rem;
 }
 
 .form-signin input {
-    background-color: #4981AA;
+  background-color: #4981aa;
 }
 
-.form-signup input{
-    background-color: #5A5EA6;    
+.form-signup input {
+  background-color: #5a5ea6;
 }
 
-#btn-signin{
-    margin-right: 32px;
+#btn-signin {
+  margin-right: 32px;
 }
 #btn-signin:hover {
-    background-color: #70ADDA;
-    cursor: pointer;
-    transition: 500ms;
+  background-color: #70adda;
+  cursor: pointer;
+  transition: 500ms;
 }
 
 .forgot {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 .forgot:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #btn-signout:hover {
-    background-color: #8287CB;
-    cursor: pointer;
-    transition: 500ms;
+  background-color: #8287cb;
+  cursor: pointer;
+  transition: 500ms;
 }
 
-
-@media screen and ( max-width: 1280px ) {
-
-    .forms {
-        width: 65%;
-    }
-
+@media screen and (max-width: 1280px) {
+  .forms {
+    width: 65%;
+  }
 }
 
-@media screen and ( max-width: 1024px ) {
+@media screen and (max-width: 1024px) {
+  body {
+    background-color: #4981aa;
+  }
 
-    body {
-        background-color: #4981AA;
-    }
-    
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .screen {
-        width: 100%;
-    }
+  .screen {
+    width: 100%;
+  }
 
-    #link-respons {
-        display: block;
-        color: white;
-        font-size: 1.2rem;
-        text-decoration: none;
-        padding: 16px 16px;
-    }
+  #link-respons {
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 16px 16px;
+  }
 
-    .forms input{
-        padding: 10px;
-    }
+  .forms input {
+    padding: 10px;
+  }
 
-    .forms input::placeholder {
-        font-size: 1rem; 
-    }
+  .forms input::placeholder {
+    font-size: 1rem;
+  }
 
-
-    .forms input[type=submit] {
-        width: fit-content;
-        font-size: 1rem;
-    }
-
+  .forms input[type="submit"] {
+    width: fit-content;
+    font-size: 1rem;
+  }
 }
 
-@media screen and ( max-width: 650px ) {
-    
-    .form-signin div {
-        display: flex;
-        flex-direction: column;
-    }
+@media screen and (max-width: 650px) {
+  .form-signin div {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .forms {
-        width: 80%;
-    }
+  .forms {
+    width: 80%;
+  }
 
-    .forms input{
-        padding: 10px;
-    }
+  .forms input {
+    padding: 10px;
+  }
 
-    .forms input::placeholder {
-        font-size: 1rem; 
-    }
+  .forms input::placeholder {
+    font-size: 1rem;
+  }
 
-
-    .forms input[type=submit] {
-        width: fit-content;
-        font-size: 1rem;
-    }
-
+  .forms input[type="submit"] {
+    width: fit-content;
+    font-size: 1rem;
+  }
 }
-

@@ -1,47 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/stylesheet/style.css">
-        <title>Sistema de Cadastro e Login</title>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <title>Sistema de Cadastro e Login</title>
+  </head>
+  <body>
+    <a id="link-respons" href="#title-signup">Cadastre-se</a>
 
-        <a id="link-respons" href="#title-signup">Cadastre-se</a>
+    <main class="container">
+      <div class="screen sign-in">
+        <form
+          method="post"
+          action="http://localhost:3000/app/authenticate"
+          class="forms form-signin"
+        >
+          <h3>Entrar</h3>
+          <input
+            onkeydown="maskCNPJ(this)"
+            maxlength="18"
+            name="cnpj"
+            type="text"
+            placeholder="CNPJ"
+          />
+          <input
+            name="password"
+            type="password"
+            minlength="6"
+            placeholder="Senha"
+          />
+          <div>
+            <input id="btn-signin" type="submit" value="Entrar" />
+            <a href="#" class="forgot">Esqueceu sua senha?</a>
+          </div>
+        </form>
+      </div>
 
-        <main class="container">
+      <div class="screen sign-up">
+        <form
+          id="form-register"
+          method="post"
+          action="http://localhost:3000/app/register"
+          class="forms form-signup"
+        >
+          <h3 id="title-signup">Cadastrar</h3>
+          <input name="name" type="text" placeholder="Nome" required />
+          <input
+            name="cnpj"
+            type="text"
+            maxlength="18"
+            placeholder="CNPJ"
+            onkeydown="maskCNPJ(this)"
+            required
+          />
+          <input
+            name="company"
+            type="text"
+            placeholder="Empresa (Nome)"
+            required
+          />
+          <input
+            name="contact"
+            type="text"
+            maxlength="14"
+            placeholder="Contato"
+            onkeydown="maskContact(this)"
+            required
+          />
+          <input name="segment" type="text" placeholder="Segmento" required />
+          <input name="email" type="email" placeholder="Email" required />
+          <input
+            name="password"
+            type="password"
+            minlength="6"
+            placeholder="Senha"
+            required
+          />
+          <input id="btn-signout" type="submit" value="Cadastrar" />
+        </form>
+      </div>
+    </main>
 
-            <div class="screen sign-in">
-                <form method="post" action="http://localhost:3000/app/authenticate" class="forms form-signin">
-                    <h3>Entrar</h3>
-                    <input onkeydown="maskCNPJ(this)" maxlength="18" name="cnpj" type="text" placeholder="CNPJ">
-                    <input name="password" type="password" minlength="6" placeholder="Senha">
-                    <div>
-                        <input id="btn-signin" type="submit" value="Entrar">
-                        <a href="#" class="forgot">Esqueceu sua senha?</a>
-                    </div>
-                </form>
-            </div>
-
-            <div class="screen sign-up">
-                <form id="form-register" method="post" action="http://localhost:3000/app/register" class="forms form-signup">
-                    <h3 id="title-signup">Cadastrar</h3>
-                    <input name="name" type="text" placeholder="Nome" required>
-                    <input name="cnpj" type="text" maxlength="18" placeholder="CNPJ" onkeydown="maskCNPJ(this)" required>
-                    <input name="company" type="text" placeholder="Empresa (Nome)" required>
-                    <input name="contact" type="text" maxlength="14" placeholder="Contato" onkeydown="maskContact(this)" required>
-                    <input name="segment" type="text" placeholder="Segmento" required>
-                    <input name="email" type="email" placeholder="Email" required>
-                    <input name="password" type="password" minlength="6" placeholder="Senha" required>
-                    <input id="btn-signout" type="submit" value="Cadastrar">
-                </form>
-                
-            </div>
-
-        </main>
-
-        <script src="/javascript/mask.js"></script>
-
-    </body>
+    <script src="/javascript/mask.js"></script>
+  </body>
 </html>
