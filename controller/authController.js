@@ -1,9 +1,7 @@
 const bcrypt = require("bcryptjs");
 const express = require("express");
-const cnpjValidation = require("./validateCnpj");
 
 const User = require("../models/user");
-const { redirect } = require("express/lib/response");
 
 const router = express.Router();
 
@@ -11,10 +9,6 @@ router.post("/register", async (req, res) => {
   const { cnpj } = req.body;
 
   try {
-    if (!cnpjValidation(req.body.cnpj)) {
-      return res.status(400).send({ error: "CNPJ invalid" });
-    }
-
     if (await User.findOne({ cnpj })) {
       return res.status(400).send({ error: "CNPJ already exists" });
     }
