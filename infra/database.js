@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/appseletivo");
-mongoose.Promise = global.Promise;
-
-module.exports = mongoose;
+async function connectDatabase() {
+  try {
+    await mongoose.connect("mongodb://root:mongodb@127.0.0.1:27017/authsystem");
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+module.exports = connectDatabase;
